@@ -1,8 +1,8 @@
 # Helpers for extracting information from logfiles generated from Gaudi output.
 #
 # Author:  Kevin Dungs <kevin.dungs@cern.ch>
-# Version: 2.0
-# Date:    2014-03-10
+# Version: 2.1
+# Date:    2014-09-02
 
 
 def timings_from_file(filename):
@@ -13,7 +13,7 @@ def timings_from_file(filename):
     with open(filename) as f:
         data = f.read()
         return dict(re.findall(
-            '^TimingAuditor\.TIMER\s+INFO\s+(\w+)\s+\|\s+([\d\.]+).*$',
+            '^\w+\.TIMER\s+INFO\s+(\w+)\s+\|\s+([\d\.]+).*$',
             data,
             flags=re.MULTILINE
         ))
