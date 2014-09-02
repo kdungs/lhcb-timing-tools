@@ -13,7 +13,7 @@ def timings_from_file(filename):
     with open(filename) as f:
         data = f.read()
         return dict(re.findall(
-            '^\w+\.TIMER\s+INFO\s+(\w+)\s+\|\s+([\d\.]+).*$',
+            '^\w+\.\w+\.*\s+INFO\s+(\w+)\s+\|\s+([\d\.]+).*$',
             data,
             flags=re.MULTILINE
         ))
